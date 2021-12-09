@@ -7,6 +7,9 @@ checkbox.addEventListener('change', (e) => {
     }
 });
 
+let marcacaoSelecionadaEl = document.querySelector('.marcacao.selecionada');
+atualizaControles(marcacaoSelecionadaEl); //carregar atributos da marcacao selecionada padrão quando abre página
+
 for (marcacaoEl of marcacaoNodeList) {
     marcacaoEl.addEventListener('click', (e) => {
         let atualMarcacaoEl = document.querySelector('.marcacao.selecionada');
@@ -65,8 +68,12 @@ function atualizaMarcacao() {
     marcacaoSelecionadaEl.dataset.conteudo = document.querySelector('#conteudo-da-marcacao').value;
 
     if (document.querySelector('input[value="formato-oval"]').checked) {
+        marcacaoSelecionadaEl.classList.remove('formato-retangular');
+        marcacaoSelecionadaEl.classList.add('formato-oval');
         marcacaoSelecionadaEl.dataset.formato = "formato-oval";
     } else {
+        marcacaoSelecionadaEl.classList.remove('formato-oval');
+        marcacaoSelecionadaEl.classList.add('formato-retangular');
         marcacaoSelecionadaEl.dataset.formato = "formato-retangular";
     }
 }
