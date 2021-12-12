@@ -8,9 +8,9 @@ filtroDaFoto.addEventListener('change', (e) => {
 let imgEl = document.querySelector('#imagem');
 imgEl.addEventListener('change', readImg);
 
-function readImg(e){
+function readImg(e) {
     const file = e.target.files[0];
-    if(file.type && !file.type.startsWith('image/')){
+    if (file.type && !file.type.startsWith('image/')) {
         console.log('File is not an image.', file.type, file);
         return;
     }
