@@ -44,7 +44,7 @@ function atualizaControles(marcacaoSelecionadaEl) {
 
     let formatoOvalInput = document.querySelector('input[value="formato-oval"]');
     let formatoRetangularInput = document.querySelector('input[value="formato-retangular"]');
-    if (marcacaoSelecionadaEl.dataset.formato === 'formato-oval') {
+    if (marcacaoSelecionadaEl.classList.contains('formato-oval')) {
         formatoOvalInput.checked = true;
         formatoRetangularInput.checked = false;
     } else {
